@@ -1,11 +1,13 @@
+import { ThemeProvider } from 'styled-components'
+import { defaultTheme } from './styles/themes/default'
+import { GlobalStyle } from './styles/themes/global'
 
-function App() {
-
+export function App() {
   return (
-      <div>
-        Ola BB    
-      </div>
+    <ThemeProvider theme={defaultTheme}>
+      <div>Ola BB</div>
+
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
-
-export default App
