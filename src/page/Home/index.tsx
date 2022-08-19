@@ -1,7 +1,7 @@
 import {
   TextHome,
   MenuConatainer,
-  ItensHome,
+  MenuItens,
   LogoHome,
   HomeContainer,
 } from './styles'
@@ -22,21 +22,21 @@ export function Home() {
           hora
         </p>
         <MenuConatainer>
-          <ItensHome>
+          <MenuItens>
             <img src={icon1} alt="" />
             Compra simples e segursssa
-          </ItensHome>
-          <ItensHome>
+          </MenuItens>
+          <MenuItens>
             <img src={icon2} alt="" />
             Entrega rápida e rastreada
-          </ItensHome>
-          <ItensHome>
+          </MenuItens>
+          <MenuItens>
             <img src={icon3} alt="" />
             Embalagem mantém o café intacto
-          </ItensHome>
-          <ItensHome>
+          </MenuItens>
+          <MenuItens>
             <img src={icon4} alt="" />O café chega fresquinho até você
-          </ItensHome>
+          </MenuItens>
         </MenuConatainer>
       </TextHome>
       <LogoHome>

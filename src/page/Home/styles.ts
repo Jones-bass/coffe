@@ -24,7 +24,7 @@ export const MenuConatainer = styled.div`
   grid-template-columns: 2fr 2fr;
   max-width: 900px;
 `
-export const ItensHome = styled.div`
+export const MenuItens = styled.div`
   display: flex;
 
   align-items: center;
