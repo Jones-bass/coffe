@@ -1,39 +1,84 @@
-import { FormContainer, TextForm, ContainerInput } from './styles'
+import {
+  ContainerMain,
+  ContainerForm,
+  ContainerPayment,
+  ContainerCardPayment,
+  CardPayment,
+} from './styles'
 import { FiMapPin } from 'react-icons/fi'
+import { FaRegMoneyBillAlt } from 'react-icons/fa'
+import { BsCreditCard, BsCurrencyDollar, BsBank2 } from 'react-icons/bs'
 
 import { Header } from '../../components/Header'
+import { Input } from '../../components/Input'
 
 export function Form() {
   return (
     <>
       <Header />
-      <FormContainer>
-        <TextForm>
+      <ContainerMain>
+        <ContainerForm>
           <FiMapPin
             style={{
-              height: '1.2rem',
-              width: '1.2rem',
+              width: '22px',
               marginBottom: '-0.1rem',
-              marginRight: '0.2rem',
+              marginRight: '0.1rem',
               color: '#C47F17',
             }}
           />
+
           <span>Endereço de entrega</span>
           <p>Informe o endereço onde deseja receber seu pedido</p>
-        </TextForm>
-        <ContainerInput>
-          <input type="text" placeholder="CEP" />
-          <input type="text" placeholder="CEP" />
+        </ContainerForm>
+        <Input />
 
-          <input type="text" placeholder="CEP" />
-
-          <input type="text" placeholder="CEP" />
-
-          <input type="text" placeholder="CEP" />
-
-          <input type="text" placeholder="CEP" />
-        </ContainerInput>
-      </FormContainer>
+        <ContainerPayment>
+          <BsCurrencyDollar
+            style={{
+              width: '24px',
+              height: '24px',
+              marginBottom: '-0.1rem',
+              color: '#8047F8',
+            }}
+          />
+          <span>Pagamento</span>
+          <p>
+            O pagamento é feito na entrega. Escolha a forma que deseja pagar
+          </p>
+          <ContainerCardPayment>
+            <CardPayment>
+              <BsCreditCard
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  color: '#8047F8',
+                }}
+              />
+              CARTÃO DE CRÉDITO
+            </CardPayment>
+            <CardPayment>
+              <BsBank2
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  color: '#8047F8',
+                }}
+              />
+              CARTÃO DE DÉBITO
+            </CardPayment>
+            <CardPayment>
+              <FaRegMoneyBillAlt
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  color: '#8047F8',
+                }}
+              />
+              DINHEIRO
+            </CardPayment>
+          </ContainerCardPayment>
+        </ContainerPayment>
+      </ContainerMain>
     </>
   )
 }
