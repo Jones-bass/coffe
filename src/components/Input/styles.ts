@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
 export const ContainerInput = styled.div`
-  display: flex;
+  padding: 40px;
 
-  padding: 0px 40px 0px 40px;
+  form {
+    width: 560px;
+    height: 216px;
+  }
 
   input {
     background-color: ${(porps) => porps.theme.button};
-    grid-template-columns: 1fr 1fr;
 
     margin-bottom: 1rem;
     margin: 0.4rem;
@@ -15,7 +17,8 @@ export const ContainerInput = styled.div`
     border-radius: 8px;
     border: none;
 
-    color: ${(porps) => porps.theme.button};
+    color: ${(porps) => porps.theme.text};
+    padding: 0.5rem;
 
     ::placeholder {
       color: ${(porps) => porps.theme.label};

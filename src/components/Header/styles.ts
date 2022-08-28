@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
-  flex: 1;
+  background-color: ${(porps) => porps.theme.purpleLight};
+
+  width: 1440;
+  height: 104;
   display: flex;
-  margin: 33px 120px 0 120px;
+  margin: 32px 100px 32px 100px;
   justify-content: space-between;
 `
 export const HeaderLogo = styled.image`

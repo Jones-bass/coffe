@@ -14,6 +14,7 @@ import { Input } from '../Input'
 export function FormPayment() {
   return (
     <ContainerMain>
+      <p>Complete seu pedido</p>
       <ContainerForm>
         <FiMapPin
           style={{

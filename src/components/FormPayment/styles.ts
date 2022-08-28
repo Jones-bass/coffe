@@ -1,10 +1,17 @@
 import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
-  background-color: ${(porps) => porps.theme.purple};
+  background-color: ${(porps) => porps.theme.card};
   width: 640;
   height: 591;
-  margin: 78px 32px 0px 100px;
+  margin: 32px 32px 0px 100px;
+
+  > p {
+    font-family: 'Baloo 2';
+    font-size: 14px;
+    background-color: ${(porps) => porps.theme.white};
+    color: ${(porps) => porps.theme.subtitle};
+  }
 `
 export const ContainerForm = styled.div`
   padding: 40px;
@@ -35,11 +42,10 @@ export const ContainerCardPayment = styled.div`
 export const CardPayment = styled.div`
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
   gap: 0.4rem;
 
-  font-size: 14px;
+  font-size: 12px;
 
   font-family: 'Roboto';
 

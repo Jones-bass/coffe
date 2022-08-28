@@ -3,86 +3,92 @@ import { ContainerInput } from './styles'
 import { ChangeEvent, useState } from 'react'
 
 export function Input() {
-  const [form, setForm] = useState('')
-
-  function handleSubmit(event: any) {
-    event.preventDefault()
-  }
+  const [formState, setFormState] = useState({
+    cep: '',
+    rua: '',
+    numero: '',
+    complemento: '',
+    bairro: '',
+    cidade: '',
+    uf: '',
+  })
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    setForm(event.target.value)
+    const { id, value } = event.target
+    setFormState({ ...formState, [id]: value })
   }
 
   return (
     <ContainerInput>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           style={{
-            width: '200px',
-            height: '46px',
+            width: '220px',
+            height: '42px',
           }}
-          type="cep"
-          value={form}
+          id="cep"
+          value={formState.cep}
           placeholder="Cep"
           onChange={handleChange}
         />
         <input
           style={{
-            width: '600px',
-            height: '46px',
+            width: '546px',
+            height: '42px',
           }}
-          type="rua"
-          value={form}
+          id="rua"
+          value={formState.rua}
           placeholder="Rua"
           onChange={handleChange}
         />
+
         <input
           style={{
-            width: '240px',
-            height: '46px',
+            width: '200px',
+            height: '42px',
           }}
-          type="numero"
-          value={form}
+          id="numero"
+          value={formState.numero}
           placeholder="Número"
           onChange={handleChange}
         />
         <input
           style={{
-            width: '346px',
-            height: '46px',
+            width: '333px',
+            height: '42px',
           }}
-          type="complemento"
-          value={form}
+          id="complemento"
+          value={formState.complemento}
           placeholder="Complemento"
           onChange={handleChange}
         />
         <input
           style={{
-            width: '240px',
-            height: '46px',
+            width: '200px',
+            height: '42px',
           }}
-          type="bairro"
-          value={form}
+          id="bairro"
+          value={formState.bairro}
           placeholder="Bairro"
           onChange={handleChange}
         />
         <input
           style={{
             width: '266px',
-            height: '46px',
+            height: '42px',
           }}
-          type="cidade"
-          value={form}
+          id="cidade"
+          value={formState.cidade}
           placeholder="Cidade"
           onChange={handleChange}
         />
         <input
           style={{
-            width: '67px',
-            height: '46px',
+            width: '50px',
+            height: '42px',
           }}
-          type="uf"
-          value={form}
+          id="uf"
+          value={formState.uf}
           placeholder="Uf"
           onChange={handleChange}
         />
