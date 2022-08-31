@@ -1,22 +1,22 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.div`
-  background-color: ${(porps) => porps.theme.purpleLight};
+export const HeaderContainer = styled.header`
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 
-  width: 1440;
-  height: 104;
+  align-items: center;
   display: flex;
-  margin: 32px 100px 32px 100px;
   justify-content: space-between;
+
+  margin: 32px 100px 32px 100px;
 `
 export const HeaderLogo = styled.image`
-  > img {
-    width: 60;
-    height: 90;
-  }
+  width: 60;
+  height: 90;
 `
 
-export const HeaderInformation = styled.image`
+export const HeaderInformation = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

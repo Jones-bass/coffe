@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-export const ContainerInput = styled.div`
-  padding: 40px;
+export const ContainerInput = styled.section`
+  padding: 0 0 0 40px;
 
   form {
     width: 560px;

@@ -10,23 +10,7 @@ export const ContainerMain = styled.main`
     color: ${(porps) => porps.theme.subtitle};
   }
 `
-export const ContainerConfirmation = styled.div`
-  background-color: ${(porps) => porps.theme.purple};
-  padding: 40px;
-  width: 448px;
-  height: 498px;
-
-  font-size: 20px;
-  border-radius: 6px 44px 6px 44px;
-
-  font-family: 'Roboto';
-  p {
-    margin-left: 23px;
-    font-size: 14px;
-  }
-`
 const Card = styled.div`
-  background-color: ${(porps) => porps.theme.button};
   width: 368px;
   height: 80px;
 
@@ -35,31 +19,72 @@ const Card = styled.div`
 
   font-family: 'Roboto';
 `
-export const CardPayment = styled(Card)`
-  display: flex;
+export const ContainerConfirmation = styled.div`
+  background-color: ${(porps) => porps.theme.card};
+  padding: 40px;
+  width: 448px;
+  height: 498px;
 
-  align-items: center;
-  text-align: center;
+  font-size: 20px;
+  border-radius: 6px 44px 6px 44px;
 
-  justify-content: center;
-  gap: 0.4rem;
-
-  margin-top: 32px;
+  font-family: 'Roboto';
+  > p {
+    margin-left: 23px;
+    font-size: 14px;
+  }
+`
+export const ContaneirPayment = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5px;
 
   > img {
     width: 64px;
+    height: 64px;
+  }
+
+  > p {
+    text-align: end;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 16px;
+  }
+`
+
+export const CardPayment = styled.div`
+  display: block;
+
+  > span {
+    font-size: 16px;
+    font-family: 'Roboto';
+  }
+`
+export const CardButton = styled.div`
+  max-width: 100%;
+  display: flex;
+
+  button {
+    width: 91px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: ${(porps) => porps.theme.button};
+
+    :hover {
+      background: ${(porps) => porps.theme.hover};
+    }
   }
 `
 
 export const CardTotal = styled(Card)`
-  align-items: center;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
 
-  margin-top: 32px;
+  align-items: center;
+  text-align: left;
   justify-content: space-between;
 
-  tr {
-    background-color: ${(porps) => porps.theme.yellow};
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+  margin-top: 32px;
 `

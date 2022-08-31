@@ -1,6 +1,8 @@
 import {
   ContainerMain,
   ContainerConfirmation,
+  ContaneirPayment,
+  CardButton,
   CardPayment,
   CardTotal,
 } from './styles'
@@ -11,27 +13,34 @@ export function CoffeConfirmation() {
     <ContainerMain>
       <p>Cafés selecionados</p>
       <ContainerConfirmation>
-        <CardPayment>
+        <ContaneirPayment>
           <img src={img1} alt="" />
-          <span>Expresso Tradicional</span>
-          <button>- 1 +</button>
-          <button>Remove</button>
-        </CardPayment>
-        <CardPayment>
-          <img src={img1} alt="" />
-          <span>Expresso Tradicional</span>
-          <button>- 1 +</button>
-          <button>Remove</button>
-        </CardPayment>
+
+          <CardPayment>
+            <span>Expresso Tradicional</span>
+            <CardButton>
+              <button>- 1 +</button>
+              <button>Remove</button>
+            </CardButton>
+          </CardPayment>
+          <p>R$ 9,90</p>
+        </ContaneirPayment>
+
         <CardTotal>
-          <tr>
-            <td>linha 1</td>
-            <td>linha 1</td>
-          </tr>
-          <tr>
-            <td>linha 2</td>
-            <td>linha 2</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td width="85%">Total de itens</td>
+              <td>R$ 29,70</td>
+            </tr>
+            <tr>
+              <td width="85%">Entrega</td>
+              <td>R$ 3,50</td>
+            </tr>
+            <tr>
+              <td width="85%">Total</td>
+              <td>R$ 33,20</td>
+            </tr>
+          </tbody>
         </CardTotal>
       </ContainerConfirmation>
     </ContainerMain>

@@ -20,7 +20,7 @@ export function Header() {
               color: '#4B2995',
             }}
           />
-          Tobias Barreto, SE{' '}
+          Tobias Barreto, SE
         </span>
 
         <a href="#">
