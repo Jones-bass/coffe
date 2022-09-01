@@ -34,10 +34,12 @@ export const ContainerConfirmation = styled.div`
     font-size: 14px;
   }
 `
-export const ContaneirPayment = styled.div`
+export const CardContaneirPayment = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 5px;
+  margin-bottom: 10px;
+  border: 10px 0px 0px 10px solid;
 
   > img {
     width: 64px;
@@ -60,7 +62,7 @@ export const CardPayment = styled.div`
     font-family: 'Roboto';
   }
 `
-export const CardButton = styled.div`
+export const ContainerButton = styled.div`
   max-width: 100%;
   display: flex;
 
@@ -87,4 +89,22 @@ export const CardTotal = styled(Card)`
   justify-content: space-between;
 
   margin-top: 32px;
+`
+
+export const ButtonConfirmation = styled.button`
+  width: 365px;
+  height: 46px;
+  border-radius: 8px;
+  margin-top: 24px;
+
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: ${(porps) => porps.theme.white};
+  background: ${(porps) => porps.theme.yellow};
+
+  :hover {
+    background: ${(porps) => porps.theme.yellowDark};
+    transition: background-color 0.2s;
+  }
 `

@@ -1,10 +1,11 @@
 import {
   ContainerMain,
   ContainerConfirmation,
-  ContaneirPayment,
-  CardButton,
+  CardContaneirPayment,
+  ContainerButton,
   CardPayment,
   CardTotal,
+  ButtonConfirmation,
 } from './styles'
 import img1 from '../../assets/cafeGelado.png'
 
@@ -13,18 +14,18 @@ export function CoffeConfirmation() {
     <ContainerMain>
       <p>Cafés selecionados</p>
       <ContainerConfirmation>
-        <ContaneirPayment>
+        <CardContaneirPayment>
           <img src={img1} alt="" />
 
           <CardPayment>
             <span>Expresso Tradicional</span>
-            <CardButton>
+            <ContainerButton>
               <button>- 1 +</button>
               <button>Remove</button>
-            </CardButton>
+            </ContainerButton>
           </CardPayment>
           <p>R$ 9,90</p>
-        </ContaneirPayment>
+        </CardContaneirPayment>
 
         <CardTotal>
           <tbody>
@@ -42,6 +43,7 @@ export function CoffeConfirmation() {
             </tr>
           </tbody>
         </CardTotal>
+        <ButtonConfirmation>Confirmar Pedido</ButtonConfirmation>
       </ContainerConfirmation>
     </ContainerMain>
   )
