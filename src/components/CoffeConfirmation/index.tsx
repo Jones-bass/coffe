@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import {
   ContainerMain,
   ContainerConfirmation,
@@ -43,7 +44,11 @@ export function CoffeConfirmation() {
             </tr>
           </tbody>
         </CardTotal>
-        <ButtonConfirmation>Confirmar Pedido</ButtonConfirmation>
+        <ButtonConfirmation>
+          <NavLink to="/confirmacao" title="confirmação">
+            Confirmar Pedido
+          </NavLink>
+        </ButtonConfirmation>
       </ContainerConfirmation>
     </ContainerMain>
   )

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.main`
   display: flex;
-  margin: 92px 120px 0 120px;
+  margin: 92px 36px 0px 0px;
 `
 export const LogoHome = styled.image`
   width: 456px;

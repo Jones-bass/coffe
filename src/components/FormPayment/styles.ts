@@ -4,7 +4,8 @@ export const ContainerMain = styled.main`
   background-color: ${(porps) => porps.theme.card};
   width: 640;
   height: 591;
-  margin: 32px 32px 0px 100px;
+  margin: 32px 50px 0px 0px;
+  flex-wrap: wrap;
 
   > p {
     font-family: 'Baloo 2';

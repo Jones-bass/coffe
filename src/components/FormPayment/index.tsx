@@ -1,3 +1,6 @@
+import { FiMapPin } from 'react-icons/fi'
+import { FaRegMoneyBillAlt } from 'react-icons/fa'
+import { BsCreditCard, BsCurrencyDollar, BsBank2 } from 'react-icons/bs'
 import {
   ContainerMain,
   ContainerForm,
@@ -5,9 +8,6 @@ import {
   ContainerCardPayment,
   CardPayment,
 } from './styles'
-import { FiMapPin } from 'react-icons/fi'
-import { FaRegMoneyBillAlt } from 'react-icons/fa'
-import { BsCreditCard, BsCurrencyDollar, BsBank2 } from 'react-icons/bs'
 
 import { Input } from '../Input'
 

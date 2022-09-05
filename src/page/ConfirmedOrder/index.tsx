@@ -1,3 +1,5 @@
+import { FiMapPin } from 'react-icons/fi'
+
 import {
   ContainerMain,
   Title,
@@ -6,14 +8,11 @@ import {
   ImgContainer,
 } from './styles'
 
-import { Header } from '../../components/Header'
-import { FiMapPin } from 'react-icons/fi'
 import EntregaImg from '../../assets/illustration.png'
 
 export function ConfirmedOrder() {
   return (
     <>
-      <Header />
       <Title>
         <span>Uhu! Pedido confirmado</span>
         <p>Agora é só aguardar que logo o café chegará até você</p>
@@ -21,47 +20,25 @@ export function ConfirmedOrder() {
       <ContainerMain>
         <ContainerConfirmed>
           <ContainerForm>
-            <FiMapPin
-              style={{
-                width: '22px',
-                color: '#C47F17',
-              }}
-            />
-
-            <p>
+            <FiMapPin size={16} color="#C47F17" />
+            <span>
               Entrega na Rua Raimundo José dos Santos, n 1035
               <br /> centro - Tobias Barreto-SE
-            </p>
+            </span>
           </ContainerForm>
           <ContainerForm>
-            <FiMapPin
-              style={{
-                width: '22px',
-                marginBottom: '-0.1rem',
-                marginRight: '0.1rem',
-                color: '#C47F17',
-              }}
-            />
-
-            <p>
+            <FiMapPin size={16} color="#C47F17" />
+            <span>
               Previsão de entrega <br />
               20 min - 30 min
-            </p>
+            </span>
           </ContainerForm>
           <ContainerForm>
-            <FiMapPin
-              style={{
-                width: '22px',
-                marginBottom: '-0.1rem',
-                marginRight: '0.1rem',
-                color: '#C47F17',
-              }}
-            />
-
-            <p>
+            <FiMapPin size={16} color="#C47F17" />
+            <span>
               Pagamento na entrega
               <br /> Cartão de Crédito
-            </p>
+            </span>
           </ContainerForm>
         </ContainerConfirmed>
         <ImgContainer>

@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 import { HeaderContainer, HeaderLogo, HeaderInformation } from './styles'
 import { IoLocationSharp, IoCartSharp } from 'react-icons/io5'
 
@@ -7,33 +9,21 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderLogo>
-        <img src={LogoHeader} alt="" />
+        <NavLink to="/" title="inicio">
+          <img src={LogoHeader} alt="" />
+        </NavLink>
       </HeaderLogo>
       <HeaderInformation>
         <span>
-          <IoLocationSharp
-            style={{
-              height: '1.2rem',
-              width: '1.2rem',
-              marginBottom: '-0.2 rem',
-              marginRight: '0.2rem',
-              color: '#4B2995',
-            }}
-          />
+          <IoLocationSharp size={20} color="#4B2995" />
           Tobias Barreto, SE
         </span>
 
-        <a href="#">
-          <IoCartSharp
-            style={{
-              height: '1.4rem',
-              width: '1.4rem',
-              marginBottom: '-0.2 rem',
-              marginRight: '0.2rem',
-              color: '#4B2995',
-            }}
-          />
-        </a>
+        <nav>
+          <NavLink to="/formulario" title="formulario">
+            <IoCartSharp size={20} color="#4B2995" />
+          </NavLink>
+        </nav>
       </HeaderInformation>
     </HeaderContainer>
   )

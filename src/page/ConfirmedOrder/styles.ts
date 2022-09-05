@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
+  width: 100%;
+  max-width: 1120px;
   margin: 80px 100px 0px 100px;
-  max-width: 100%;
   display: flex;
 `
 
@@ -28,12 +29,13 @@ export const ContainerConfirmed = styled.section`
   border-radius: 6px 36px 6px 36px;
   background: ${(porps) => porps.theme.button};
 `
+
 export const ContainerForm = styled.div`
   display: flex;
   padding: 40px 0px 0px 40px;
 
-  p {
-    font-size: 16px;
+  > span {
+    font-size: 14px;
     font-family: 'Roboto';
   }
 `

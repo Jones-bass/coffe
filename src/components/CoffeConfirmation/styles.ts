@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
   margin: 32px 100px 0px 0px;
+  flex-wrap: wrap;
 
   > p {
     font-family: 'Baloo 2';
@@ -99,9 +100,13 @@ export const ButtonConfirmation = styled.button`
 
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  color: ${(porps) => porps.theme.white};
   background: ${(porps) => porps.theme.yellow};
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: ${(porps) => porps.theme.white};
+  }
 
   :hover {
     background: ${(porps) => porps.theme.yellowDark};
