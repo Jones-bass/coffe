@@ -8,23 +8,23 @@ import {
   ContainerButton,
 } from './styles'
 import { IoCartSharp } from 'react-icons/io5'
-import ProductsList from './product'
+import ProductsList from './components/product'
 
 export function ListCoffe() {
   return (
     <ContainerMain>
       <p>Complete seu pedido</p>
       <ContainerCard>
-        {ProductsList.map((produto) => (
+        {ProductsList.map((product) => (
           <Cards>
             <ImageCard>
-              <img src={produto.image} alt={produto.name_product} />
+              <img src={product.image} alt={product.name_product} />
             </ImageCard>
-            <span>{produto.name_product}</span>
-            <h1>{produto.category}</h1>
-            <p>{produto.description}</p>
+            <span>{product.category}</span>
+            <h1>{product.name_product}</h1>
+            <p>{product.description}</p>
             <CardButton>
-              R$ <p>{`${produto.price}0`}</p>
+              R$ <p>{product.price.toFixed(2)}</p>
               <ContainerButton>
                 <button>- 1 +</button>
                 <a href="/">

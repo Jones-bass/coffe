@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import img1 from '../../assets/coffe/cafeGelado.png'
+
 import {
   ContainerMain,
   ContainerConfirmation,
@@ -8,7 +10,6 @@ import {
   CardTotal,
   ButtonConfirmation,
 } from './styles'
-import img1 from '../../assets/cafeGelado.png'
 
 export function CoffeConfirmation() {
   return (
@@ -16,7 +17,7 @@ export function CoffeConfirmation() {
       <p>Cafés selecionados</p>
       <ContainerConfirmation>
         <CardContaneirPayment>
-          <img src={img1} alt="" />
+          <img src={img1} alt="Café Gelado" />
 
           <CardPayment>
             <span>Expresso Tradicional</span>

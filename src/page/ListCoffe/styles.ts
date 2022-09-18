@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
-  margin: 32px 50px 0px 50px;
+  margin: 32px 0px 0px 0px;
   flex-wrap: wrap;
 
   > p {
     font-family: 'Baloo 2';
-    font-size: 14px;
+    font-size: 32px;
     background-color: ${(porps) => porps.theme.white};
-    color: ${(porps) => porps.theme.subtitle};
+    color: ${(porps) => porps.theme.title};
   }
 `
 
@@ -16,8 +16,6 @@ export const ContainerCard = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 100%;
-
-  background-color: ${(porps) => porps.theme.purple};
 `
 export const ImageCard = styled.image`
   position: absolute;
@@ -27,7 +25,7 @@ export const Cards = styled.div`
   width: 256px;
   height: 310px;
   padding: 100px 20px 0px 20px;
-  margin: 30px 70px 20px 0px;
+  margin: 30px 40px 20px 0px;
 
   text-align: center;
 
@@ -36,8 +34,6 @@ export const Cards = styled.div`
 
   > span {
     display: flex;
-
-    margin: 0px 60px 0px 60px;
 
     align-items: center;
     text-align: center;
