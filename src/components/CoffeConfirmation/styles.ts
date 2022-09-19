@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
-  margin: 32px 100px 0px 0px;
+  padding: 32px 0px 0px 0px;
   flex-wrap: wrap;
 
   > p {
@@ -23,8 +23,8 @@ const Card = styled.div`
 export const ContainerConfirmation = styled.div`
   background-color: ${(porps) => porps.theme.card};
   padding: 40px;
-  width: 448px;
-  height: 498px;
+  width: 428px;
+  height: 543px;
 
   font-size: 20px;
   border-radius: 6px 44px 6px 44px;
