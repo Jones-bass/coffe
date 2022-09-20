@@ -38,6 +38,7 @@ export const ContainerPayment = styled.div`
 export const ContainerCardPayment = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 32px;
 `
 
 export const CardPayment = styled.div`
@@ -52,8 +53,7 @@ export const CardPayment = styled.div`
 
   border-radius: 8px;
 
-  margin-top: 32px;
+  margin: 2px;
   width: 180px;
   height: 50px;
-  background-color: ${(porps) => porps.theme.button};
 `

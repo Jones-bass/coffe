@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
-  margin: 32px 100px 32px 100px;
-  width: 100%;
-  max-width: 1120px;
+  max-width: 74rem;
+
+  margin: 3rem auto;
 
   display: flex;
   flex-direction: column;

@@ -25,7 +25,7 @@ export const Cards = styled.div`
   width: 256px;
   height: 310px;
   padding: 100px 20px 0px 20px;
-  margin: 30px 40px 20px 0px;
+  margin: 30px 52px 20px 0px;
 
   text-align: center;
 

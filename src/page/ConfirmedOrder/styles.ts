@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const ContainerMain = styled.main`
   width: 100%;
   max-width: 1120px;
-  margin: 80px 100px 0px 100px;
+  padding: 80px 0px 0px 0px;
   display: flex;
 `
 
 export const Title = styled.div`
-  margin: 80px 100px 0px 100px;
+  margin: 80px 0px 0px 0px;
 
   span {
     font-size: 32px;
