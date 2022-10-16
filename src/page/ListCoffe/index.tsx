@@ -1,40 +1,47 @@
 /* eslint-disable react/jsx-key */
 import {
-  ContainerMain,
-  ContainerCard,
   Cards,
   ImageCard,
   CardButton,
   ContainerButton,
+  ButtonCar,
 } from './styles'
 import { IoCartSharp } from 'react-icons/io5'
-import ProductsList from './components/product'
 
-export function ListCoffe() {
+interface productsProps {
+  image: string
+  name: string
+  category: string
+  description: string
+  price: number
+}
+
+export function ListCoffe({
+  image,
+  name,
+  category,
+  description,
+  price,
+}: productsProps) {
   return (
-    <ContainerMain>
-      <p>Complete seu pedido</p>
-      <ContainerCard>
-        {ProductsList.map((product) => (
-          <Cards>
-            <ImageCard>
-              <img src={product.image} alt={product.name_product} />
-            </ImageCard>
-            <span>{product.category}</span>
-            <h1>{product.name_product}</h1>
-            <p>{product.description}</p>
-            <CardButton>
-              R$ <p>{product.price.toFixed(2)}</p>
-              <ContainerButton>
-                <button>- 1 +</button>
-                <a href="/">
-                  <IoCartSharp size={24} color="#fff" />
-                </a>
-              </ContainerButton>
-            </CardButton>
-          </Cards>
-        ))}
-      </ContainerCard>
-    </ContainerMain>
+    <Cards>
+      <ImageCard>
+        <img src={image} alt={name} />
+      </ImageCard>
+      <span>{category}</span>
+      <h1>{name}</h1>
+      <p>{description}</p>
+      <CardButton>
+        R$ <p>{price.toFixed(2)}</p>
+        <ContainerButton>
+          <button> - </button>
+          <span>10</span>
+          <button> + </button>
+        </ContainerButton>
+        <ButtonCar>
+          <IoCartSharp size={24} color="#fff" />
+        </ButtonCar>
+      </CardButton>
+    </Cards>
   )
 }

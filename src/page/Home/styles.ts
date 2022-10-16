@@ -41,3 +41,19 @@ export const MenuItens = styled.div`
 `
 
 export const CountContainer = styled.div``
+
+export const ContainerCardMain = styled.div`
+  margin-top: 5rem;
+
+  > p {
+    font-family: 'Baloo 2';
+    font-size: 32px;
+    background-color: ${(porps) => porps.theme.white};
+    color: ${(porps) => porps.theme.title};
+  }
+`
+export const ContainerCard = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 100%;
+`

@@ -1,26 +1,5 @@
 import styled from 'styled-components'
 
-export const ContainerMain = styled.main`
-  margin: 32px 0px 0px 0px;
-  flex-wrap: wrap;
-
-  > p {
-    font-family: 'Baloo 2';
-    font-size: 32px;
-    background-color: ${(porps) => porps.theme.white};
-    color: ${(porps) => porps.theme.title};
-  }
-`
-
-export const ContainerCard = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 100%;
-`
-export const ImageCard = styled.image`
-  position: absolute;
-  margin: -120px 0px 0px -50px;
-`
 export const Cards = styled.div`
   width: 256px;
   height: 310px;
@@ -72,7 +51,6 @@ export const Cards = styled.div`
 export const CardButton = styled.div`
   display: flex;
   margin-top: 35px;
-
   align-items: center;
 
   > p {
@@ -82,32 +60,50 @@ export const CardButton = styled.div`
     margin-left: 5px;
   }
 `
+
+export const ImageCard = styled.image`
+  position: absolute;
+  margin: -120px 0px 0px -50px;
+`
+
 export const ContainerButton = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  border-radius: 8px;
 
-  gap: 15px;
+  background: ${(porps) => porps.theme.button};
 
-  margin-left: 25px;
+  margin-left: 10px;
+
+  > span {
+    padding: 9px;
+
+    align-items: center;
+  }
 
   > button {
-    width: 72px;
-    height: 38px;
-    border-radius: 8px;
+    width: 35px;
+    height: 35px;
     border: none;
-
-    background-color: ${(porps) => porps.theme.button};
-  }
-
-  > a {
-    width: 38px;
-    height: 38px;
-
-    background-color: ${(porps) => porps.theme.purple};
     border-radius: 8px;
-    padding: 6px;
     cursor: pointer;
+    background: ${(porps) => porps.theme.button};
   }
+
+  > button:focus {
+    box-shadow: 0 0 0 1px ${(props) => props.theme.yellow};
+  }
+`
+
+export const ButtonCar = styled.button`
+  width: 38px;
+  height: 38px;
+  border: none;
+  margin-left: 5px;
+  background-color: ${(porps) => porps.theme.purple};
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
 `
