@@ -12,10 +12,40 @@ import icon1 from '../../assets/Icon1.png'
 import icon2 from '../../assets/Icon2.png'
 import icon3 from '../../assets/Icon3.png'
 import icon4 from '../../assets/Icon4.png'
-import ProductsList from '../ListCoffe/components/product'
 import { ListCoffe } from '../ListCoffe'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
+import { toast } from 'react-toastify'
+import { Loading } from '../../components/Loading'
+import { Product } from '../../@types/product'
 
 export function Home() {
+  const [loading, setLoading] = useState(true)
+  const [dados, setDados] = useState<Product[]>([])
+
+  useEffect(() => {
+    async function loadDados() {
+      setLoading(true)
+      try {
+        const response = await api.get('/coffees')
+        const data = await response.data
+
+        setDados(data)
+      } catch (error) {
+        toast.error('Erro ao exibir produtos, tente novamente mais tarde.')
+
+        setLoading(false)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadDados()
+  }, [])
+
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <>
       <HomeContainer>
@@ -53,15 +83,8 @@ export function Home() {
         <p>Complete seu pedido</p>
 
         <ContainerCard>
-          {ProductsList.map((item) => (
-            <ListCoffe
-              key={item.id}
-              price={item.price}
-              name={item.name_product}
-              category={item.category}
-              description={item.description}
-              image={item.image}
-            />
+          {dados.map((item) => (
+            <ListCoffe key={item.id} product={item} />
           ))}
         </ContainerCard>
       </ContainerCardMain>

@@ -107,3 +107,21 @@ export const ButtonCar = styled.button`
   padding: 6px;
   cursor: pointer;
 `
+
+export const Tags = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .tag {
+    background: ${(props) => props.theme.yellowLight};
+    padding: 0.25rem 0.5rem;
+    border-radius: 6.25rem;
+    color: ${(props) => props.theme.yellowDark};
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+`
