@@ -1,28 +1,27 @@
 import styled from 'styled-components'
 
-export const ContainerInput = styled.section`
-  padding: 0 0 0 40px;
+export const InputContainer = styled.div`
+  background-color: ${(props) => props.theme.input};
+  border: solid 1px ${(props) => props.theme.button};
 
-  form {
-    width: 560px;
-    height: 216px;
-  }
+  height: 40px;
+  border-radius: 8px;
 
-  input {
-    background-color: ${(porps) => porps.theme.button};
+  display: flex;
+  align-items: center;
+`
 
-    margin-bottom: 1rem;
-    margin: 0.4rem;
+export const InputText = styled.input`
+  background-color: transparent;
+  margin-left: 10px;
+  width: 100%;
 
-    border-radius: 8px;
-    border: none;
+  color: ${(props) => props.theme.text};
 
-    color: ${(porps) => porps.theme.text};
-    padding: 0.5rem;
+  border: none;
 
-    ::placeholder {
-      color: ${(porps) => porps.theme.label};
-      padding: 0.5rem;
-    }
+  :focus {
+    outline: transparent;
+    box-shadow: none;
   }
 `

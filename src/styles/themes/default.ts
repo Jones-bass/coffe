@@ -2,6 +2,7 @@ export const defaultTheme = {
   white: '#FFFFFF',
   background: '#FAFAFA',
   card: '#F3F2F2',
+  input: '#EDEDED',
   button: '#E6E5E5',
   hover: '#D7D5D5',
   label: '#8D8686',

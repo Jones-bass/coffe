@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
+  margin-left: -10px;
+
   padding: 32px 0px 0px 0px;
   flex-wrap: wrap;
 
@@ -9,7 +11,7 @@ export const ContainerMain = styled.main`
 
     font-family: 'Baloo 2';
     font-size: 14px;
-    background-color: ${(porps) => porps.theme.white};
+    background-color: ${(porps) => porps.theme.background};
     color: ${(porps) => porps.theme.subtitle};
   }
 `
