@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
 `
-export const HeaderLogo = styled.image`
+export const HeaderLogo = styled.div`
   width: 60;
   height: 90;
 `

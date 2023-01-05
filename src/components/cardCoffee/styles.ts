@@ -11,21 +11,6 @@ export const Cards = styled.div`
   border-radius: 6px 36px 6px 36px;
   background: ${(porps) => porps.theme.card};
 
-  > span {
-    display: flex;
-
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
-    font-family: 'Baloo 2';
-    font-size: 14px;
-    border-radius: 8px;
-
-    background-color: ${(porps) => porps.theme.yellowLight};
-    color: ${(porps) => porps.theme.yellowDark};
-  }
-
   > h1 {
     margin-top: 16px;
     align-items: center;
@@ -61,9 +46,9 @@ export const CardButton = styled.div`
   }
 `
 
-export const ImageCard = styled.image`
-  position: absolute;
-  margin: -120px 0px 0px -50px;
+export const ImageCard = styled.div`
+  position: relative;
+  margin: -120px 0px 0px 0px;
 `
 
 export const ContainerButton = styled.div`
@@ -75,12 +60,13 @@ export const ContainerButton = styled.div`
 
   background: ${(porps) => porps.theme.button};
 
-  margin-left: 10px;
+  margin-left: 4px;
 
   > span {
-    padding: 9px;
-
-    align-items: center;
+    width: 2.5rem;
+    padding: 0 0.3rem;
+    font-size: 1rem;
+    color: ${(props) => props.theme.title};
   }
 
   > button {
@@ -92,8 +78,8 @@ export const ContainerButton = styled.div`
     background: ${(porps) => porps.theme.button};
   }
 
-  > button:focus {
-    box-shadow: 0 0 0 1px ${(props) => props.theme.yellow};
+  > button:hover {
+    background-color: ${(props) => props.theme.yellowLight};
   }
 `
 
@@ -108,14 +94,14 @@ export const ButtonCar = styled.button`
   cursor: pointer;
 `
 
-export const Tags = styled.div`
+export const CardTags = styled.div`
   width: 100%;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
-  .tag {
+  span {
     background: ${(props) => props.theme.yellowLight};
     padding: 0.25rem 0.5rem;
     border-radius: 6.25rem;

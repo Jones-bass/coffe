@@ -1,23 +1,24 @@
+import { useEffect, useState } from 'react'
+
 import {
   TextHome,
   MenuConatainer,
-  MenuItens,
   LogoHome,
   HomeContainer,
   ContainerCard,
   ContainerCardMain,
 } from './styles'
+import { FaBox } from 'react-icons/fa'
+import { MdWatchLater, MdShoppingCart, MdCoffee } from 'react-icons/md'
+
 import img from '../../assets/Imagem.png'
-import icon1 from '../../assets/Icon1.png'
-import icon2 from '../../assets/Icon2.png'
-import icon3 from '../../assets/Icon3.png'
-import icon4 from '../../assets/Icon4.png'
-import { ListCoffe } from '../ListCoffe'
-import { useEffect, useState } from 'react'
+
 import { api } from '../../services/api'
 import { toast } from 'react-toastify'
 import { Loading } from '../../components/Loading'
 import { Product } from '../../@types/product'
+import { CardCoffee } from '../../components/cardCoffee'
+import { IconMenu } from '../../components/IconMenu'
 
 export function Home() {
   const [loading, setLoading] = useState(true)
@@ -57,21 +58,26 @@ export function Home() {
             hora
           </p>
           <MenuConatainer>
-            <MenuItens>
-              <img src={icon1} alt="" />
-              Compra simples e segursssa
-            </MenuItens>
-            <MenuItens>
-              <img src={icon2} alt="" />
-              Entrega rápida e rastreada
-            </MenuItens>
-            <MenuItens>
-              <img src={icon3} alt="" />
-              Embalagem mantém o café intacto
-            </MenuItens>
-            <MenuItens>
-              <img src={icon4} alt="" />O café chega fresquinho até você
-            </MenuItens>
+            <IconMenu
+              text="Compra simples e segura"
+              variant="yellowDark"
+              Icon={<MdShoppingCart size={16} />}
+            />
+            <IconMenu
+              text="Entrega rápida e rastreada"
+              variant="yellow"
+              Icon={<MdWatchLater size={16} />}
+            />
+            <IconMenu
+              text="Embalagem mantém o café intacto"
+              variant="gray"
+              Icon={<FaBox size={12} />}
+            />
+            <IconMenu
+              text="O café chega fresquinho até você"
+              variant="purple"
+              Icon={<MdCoffee size={16} />}
+            />
           </MenuConatainer>
         </TextHome>
         <LogoHome>
@@ -84,7 +90,7 @@ export function Home() {
 
         <ContainerCard>
           {dados.map((item) => (
-            <ListCoffe key={item.id} product={item} />
+            <CardCoffee key={item.id} product={item} />
           ))}
         </ContainerCard>
       </ContainerCardMain>
