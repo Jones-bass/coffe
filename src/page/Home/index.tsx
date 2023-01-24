@@ -20,9 +20,13 @@ import { Product } from '../../@types/product'
 import { CardCoffee } from '../../components/cardCoffee'
 import { IconMenu } from '../../components/IconMenu'
 
+export interface ProductFormat extends Product {
+  priceFormattd: string
+}
+
 export function Home() {
   const [loading, setLoading] = useState(true)
-  const [dados, setDados] = useState<Product[]>([])
+  const [dados, setDados] = useState<ProductFormat[]>([])
 
   useEffect(() => {
     async function loadDados() {

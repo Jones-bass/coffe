@@ -6,16 +6,19 @@ import { GlobalStyle } from './styles/themes/global'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { AuthContextProvider } from './context/auth'
 
 export function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <ToastContainer />
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+    <AuthContextProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <ToastContainer />
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
 
-      <GlobalStyle />
-    </ThemeProvider>
+        <GlobalStyle />
+      </ThemeProvider>
+    </AuthContextProvider>
   )
 }

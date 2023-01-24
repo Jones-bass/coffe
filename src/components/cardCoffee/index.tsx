@@ -5,19 +5,34 @@ import {
   ImageCard,
   CardButton,
   ContainerButton,
-  ButtonCar,
   CardTags,
 } from './styles'
 import { IoCartSharp } from 'react-icons/io5'
-import { Product } from '../../@types/product'
 import { RiSubtractFill, RiAddFill } from 'react-icons/ri'
+import { useAuth } from '../../hooks/useAuth'
+import { ProductFormat } from '../../page/Home'
+import { Card } from '../../context/auth'
+import { ButtonCart } from '../ButtonCart'
 
 interface ProductsProps {
-  product: Product
+  product: ProductFormat
 }
 
 export function CardCoffee({ product }: ProductsProps) {
+  const { card, addCard } = useAuth()
+
   const [amount, setAmount] = useState(1)
+
+  function handleAddCard(product: Card) {
+    const newProduct = {
+      ...product,
+      amount,
+    }
+
+    addCard(newProduct)
+    setAmount(1)
+    console.log(card)
+  }
 
   function handleIncrement() {
     setAmount((state) => state + 1)
@@ -53,9 +68,13 @@ export function CardCoffee({ product }: ProductsProps) {
             <RiAddFill size={16} />
           </button>
         </ContainerButton>
-        <ButtonCar>
+        <ButtonCart
+          hoverVariant="purple"
+          variant="purpleDark"
+          onClick={() => handleAddCard(product)}
+        >
           <IoCartSharp size={24} color="#fff" />
-        </ButtonCar>
+        </ButtonCart>
       </CardButton>
     </Cards>
   )

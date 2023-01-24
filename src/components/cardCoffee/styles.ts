@@ -83,17 +83,6 @@ export const ContainerButton = styled.div`
   }
 `
 
-export const ButtonCar = styled.button`
-  width: 38px;
-  height: 38px;
-  border: none;
-  margin-left: 5px;
-  background-color: ${(porps) => porps.theme.purple};
-  border-radius: 8px;
-  padding: 6px;
-  cursor: pointer;
-`
-
 export const CardTags = styled.div`
   width: 100%;
 
