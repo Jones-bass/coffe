@@ -11,12 +11,12 @@ import {
   ContainerText,
 } from './styles'
 
-import { CoffeConfirmation } from '../../components/CoffeConfirmation'
 import { Input } from '../../components/Input'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { IFormLogin } from '../../@types/FormLogin'
 import { Payment } from '../../components/Payment'
+import { TotalCoffeeContainer } from '../../components/TotalCoffeeContainer'
 
 export function Form() {
   const [typePayment, setTypePayment] = useState<
@@ -137,7 +137,7 @@ export function Form() {
           </ContainerPayment>
         </Container>
       </ContainerMain>
-      <CoffeConfirmation />
+      <TotalCoffeeContainer />
     </ContainerCads>
   )
 }

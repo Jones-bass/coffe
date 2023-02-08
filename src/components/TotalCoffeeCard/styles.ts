@@ -15,15 +15,7 @@ export const ContainerMain = styled.main`
     color: ${(porps) => porps.theme.subtitle};
   }
 `
-const Card = styled.div`
-  width: 368px;
-  height: 80px;
 
-  border-radius: 8px;
-  font-size: 14px;
-
-  font-family: 'Roboto';
-`
 export const ContainerConfirmation = styled.div`
   background-color: ${(porps) => porps.theme.card};
   margin-left: 20px;
@@ -83,38 +75,5 @@ export const ContainerButton = styled.div`
     :hover {
       background: ${(porps) => porps.theme.hover};
     }
-  }
-`
-
-export const CardTotal = styled(Card)`
-  border-collapse: separate;
-  border-spacing: 0 0.5rem;
-
-  align-items: center;
-  text-align: left;
-  justify-content: space-between;
-
-  margin-top: 32px;
-`
-
-export const ButtonConfirmation = styled.button`
-  width: 365px;
-  height: 46px;
-  border-radius: 8px;
-  margin-top: 24px;
-
-  border: none;
-  cursor: pointer;
-  background: ${(porps) => porps.theme.yellow};
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: ${(porps) => porps.theme.white};
-  }
-
-  :hover {
-    background: ${(porps) => porps.theme.yellowDark};
-    transition: background-color 0.2s;
   }
 `
