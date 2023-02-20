@@ -19,6 +19,7 @@ interface CartFormatted extends Card {
 interface IAuthContextCard {
   addCard: (product: Card) => void
   priceFormattedAndSubTotal: CartFormatted[]
+  updateAmount: (id: number, type: 'increment' | 'decrement') => void
 
   card: Card[]
 }
@@ -63,8 +64,26 @@ export const AuthContextProvider = ({
     localStorage.setItem('@CoffeeDelivery', JSON.stringify(copyCard))
   }
 
+  function updateAmount(id: number, type: 'increment' | 'decrement') {
+    const cardCopy = [...card]
+    const productIndex = cardCopy.findIndex((product) => product.id === id)
+
+    if (productIndex >= 0) {
+      const item = cardCopy[productIndex]
+      cardCopy[productIndex].amount =
+        type === 'increment' ? item.amount + 1 : item.amount - 1
+    } else {
+      throw Error()
+    }
+
+    setCard(cardCopy)
+    localStorage.setItem('@Coffee:card', JSON.stringify(cardCopy))
+  }
+
   return (
-    <AuthContext.Provider value={{ addCard, card, priceFormattedAndSubTotal }}>
+    <AuthContext.Provider
+      value={{ addCard, card, priceFormattedAndSubTotal, updateAmount }}
+    >
       {children}
     </AuthContext.Provider>
   )

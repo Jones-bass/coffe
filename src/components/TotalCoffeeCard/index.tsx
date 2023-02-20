@@ -1,3 +1,6 @@
+import { useAuth } from '../../hooks/useAuth'
+import { BiMinus, BiPlus } from 'react-icons/bi'
+
 import { CardContaneirPayment, ContainerButton, CardPayment } from './styles'
 
 interface CartFormatted {
@@ -16,6 +19,15 @@ interface CoffeeSelectedProps {
   item: CartFormatted
 }
 export function TotalCoffeeCard({ item }: CoffeeSelectedProps) {
+  const { updateAmount } = useAuth()
+
+  function handleIncrement(id: number) {
+    updateAmount(id, 'increment')
+  }
+
+  function handleDecrement(id: number) {
+    updateAmount(id, 'decrement')
+  }
   return (
     <CardContaneirPayment>
       <img src={item.image} alt={item.title} />
@@ -23,8 +35,17 @@ export function TotalCoffeeCard({ item }: CoffeeSelectedProps) {
       <CardPayment>
         <span>{item.title}</span>
         <ContainerButton>
-          <button>- 1 +</button>
-          <button>Remove</button>
+          <button
+            type="button"
+            onClick={() => handleDecrement(item.id)}
+            disabled={item.amount <= 1}
+          >
+            <BiMinus size={16} />
+          </button>
+          <input type="number" value={item.amount} readOnly />
+          <button type="button" onClick={() => handleIncrement(item.id)}>
+            <BiPlus size={16} />
+          </button>
         </ContainerButton>
       </CardPayment>
       <p>{item.subTotal}</p>

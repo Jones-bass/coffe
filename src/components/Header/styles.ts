@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   align-items: center;
   display: flex;
+  max-width: 1134px;
   justify-content: space-between;
 `
 export const HeaderLogo = styled.div`
@@ -15,16 +16,19 @@ export const HeaderInformation = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 8px;
+
   > span {
     background-color: ${(porps) => porps.theme.purpleLight};
     border-radius: 8px;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 15px 20px 15px 20px;
   }
 
   nav {
     display: flex;
-    gap: 0.55rem;
+    justify-content: space-between;
+    align-items: center;
 
     > a {
       background-color: ${(porps) => porps.theme.yellowLight};

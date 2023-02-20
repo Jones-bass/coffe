@@ -4,6 +4,7 @@ export const ContainerMain = styled.main`
   margin-left: -10px;
 
   padding: 32px 0px 0px 0px;
+
   flex-wrap: wrap;
 
   > p {
@@ -34,7 +35,14 @@ export const ContainerConfirmation = styled.div`
 `
 export const CardContaneirPayment = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 23rem;
+
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  padding-bottom: 2.5rem;
+
+  gap: 1rem;
+
   padding: 5px;
   margin-bottom: 10px;
   border: 10px 0px 0px 10px solid;
@@ -42,37 +50,68 @@ export const CardContaneirPayment = styled.div`
   > img {
     width: 64px;
     height: 64px;
+    grid-row: 1 / 3;
+    grid-column: 1 / 1;
   }
 
   > p {
     text-align: end;
     font-family: 'Roboto';
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
   }
 `
 
 export const CardPayment = styled.div`
-  display: block;
+  gap: 0.5rem;
 
   > span {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Roboto';
   }
 `
 export const ContainerButton = styled.div`
-  max-width: 100%;
+  grid-column: 2 / 2;
+  background: ${(props) => props.theme.button};
+
+  width: 4.5rem;
+  padding: 0.563rem;
+  border-radius: 0.375rem;
+
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.125rem;
+
+  input {
+    width: 1.25rem;
+    background: transparent;
+    border: 0px solid transparent;
+    padding: 0 0.3rem;
+    font-size: 1rem;
+
+    &[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
 
   button {
-    width: 91px;
-    height: 32px;
-    border-radius: 8px;
-    border: none;
     cursor: pointer;
-    background: ${(porps) => porps.theme.button};
+    border: 0;
+    background: transparent;
+    color: ${(props) => props.theme.purple};
 
-    :hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+
+    &:disabled {
+      color: ${(props) => props.theme.label};
+    }
+
+    &:hover {
       background: ${(porps) => porps.theme.hover};
     }
   }
