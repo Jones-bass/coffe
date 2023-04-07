@@ -4,7 +4,15 @@ import { IFormLogin } from '../../@types/FormLogin'
 import { InputContainer, InputText } from './styles'
 
 interface InputProps {
-  name: 'cep' | 'rua' | 'numero' | 'complemento' | 'bairro' | 'cidade' | 'uf'
+  name:
+    | 'cep'
+    | 'rua'
+    | 'numero'
+    | 'complemento'
+    | 'opcional'
+    | 'bairro'
+    | 'cidade'
+    | 'uf'
   className?: string
   control: Control<IFormLogin, any>
   placeholder: string

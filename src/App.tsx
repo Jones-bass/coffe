@@ -12,7 +12,7 @@ export function App() {
   return (
     <UseCartContextProvider>
       <ThemeProvider theme={defaultTheme}>
-        <ToastContainer />
+        <ToastContainer position="top-center" />
         <BrowserRouter>
           <Router />
         </BrowserRouter>

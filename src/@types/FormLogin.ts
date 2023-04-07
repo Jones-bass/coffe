@@ -3,6 +3,8 @@ export interface IFormLogin {
   rua: string
   numero: number
   complemento: string | number
+  opcional: string | number
+
   bairro: string | number
   cidade: string | number
   uf: string
@@ -11,6 +13,7 @@ export interface IFormLogin {
 export const defaultValues: IFormLogin = {
   cep: '',
   rua: '',
+  opcional: '',
   numero: 0,
   complemento: '',
   bairro: '',

@@ -12,14 +12,14 @@ import { IoCartSharp } from 'react-icons/io5'
 import { RiSubtractFill, RiAddFill } from 'react-icons/ri'
 import { ProductFormat } from '../../page/Home'
 import { ButtonCart } from '../ButtonCart'
-import { Card, UseContextCart } from '../../context/useCartContext'
+import { Card, UseContextCard } from '../../context/useCartContext'
 
 interface ProductsProps {
   product: ProductFormat
 }
 
 export function CardCoffee({ product }: ProductsProps) {
-  const { card, addCard } = useContext(UseContextCart)
+  const { card, addCard } = useContext(UseContextCard)
 
   const [amount, setAmount] = useState(1)
   const [isVisible, setIsVisible] = useState(false)

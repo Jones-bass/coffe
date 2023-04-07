@@ -7,7 +7,7 @@ import {
   CardPayment,
 } from './styles'
 import { useContext } from 'react'
-import { UseContextCart } from '../../context/useCartContext'
+import { UseContextCard } from '../../context/useCartContext'
 
 interface CartFormatted {
   id: number
@@ -25,7 +25,7 @@ interface CoffeeSelectedProps {
   item: CartFormatted
 }
 export function TotalCoffeeCard({ item }: CoffeeSelectedProps) {
-  const { removeCard, updateAmount } = useContext(UseContextCart)
+  const { removeCard, updateAmount } = useContext(UseContextCard)
 
   function handleRemoveCard(id: number) {
     removeCard(id)

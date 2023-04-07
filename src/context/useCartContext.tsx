@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { Product } from '../@types/product'
 import { priceFormatter } from '../utils/priceFormatter'
 
-export interface IUseContextCartProvider {
+export interface IUseContextCardProvider {
   children: React.ReactNode
 }
 
@@ -16,7 +16,7 @@ interface CartFormatted extends Card {
   subTotal: string
 }
 
-interface IUseContextCart {
+interface IUseContextCard {
   addCard: (product: Card) => void
   priceFormattedAndSubTotal: CartFormatted[]
   removeCard: (id: number) => void
@@ -25,13 +25,13 @@ interface IUseContextCart {
   card: Card[]
 }
 
-export const UseContextCart = createContext<IUseContextCart>(
-  {} as IUseContextCart,
+export const UseContextCard = createContext<IUseContextCard>(
+  {} as IUseContextCard,
 )
 
 export const UseCartContextProvider = ({
   children,
-}: IUseContextCartProvider) => {
+}: IUseContextCardProvider) => {
   const [card, setCard] = useState<Card[]>(() => {
     const storageCard = localStorage.getItem('@CoffeeDelivery')
 
@@ -78,23 +78,23 @@ export const UseCartContextProvider = ({
     }
 
     setCard(cardCopy)
-    localStorage.setItem('@Coffee:card', JSON.stringify(cardCopy))
+    localStorage.setItem('@CoffeeDelivery', JSON.stringify(cardCopy))
   }
 
   function removeCard(id: number) {
-    const copyCart = [...card]
-    const productIndex = copyCart.findIndex((cartItem) => cartItem.id === id)
+    const copyCard = [...card]
+    const productIndex = copyCard.findIndex((cardItem) => cardItem.id === id)
 
     if (productIndex >= 0) {
-      copyCart.splice(productIndex, 1)
-      setCard(copyCart)
-      localStorage.setItem('@CoffeeDelivery:cart', JSON.stringify(copyCart))
+      copyCard.splice(productIndex, 1)
+      setCard(copyCard)
+      localStorage.setItem('@CoffeeDelivery', JSON.stringify(copyCard))
     } else {
       throw Error()
     }
   }
   return (
-    <UseContextCart.Provider
+    <UseContextCard.Provider
       value={{
         removeCard,
         addCard,
@@ -104,6 +104,6 @@ export const UseCartContextProvider = ({
       }}
     >
       {children}
-    </UseContextCart.Provider>
+    </UseContextCard.Provider>
   )
 }

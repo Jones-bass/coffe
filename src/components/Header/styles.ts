@@ -6,10 +6,7 @@ export const HeaderContainer = styled.header`
   max-width: 1134px;
   justify-content: space-between;
 `
-export const HeaderLogo = styled.div`
-  width: 60;
-  height: 90;
-`
+export const HeaderLogo = styled.div``
 
 export const HeaderInformation = styled.div`
   display: flex;
@@ -21,8 +18,13 @@ export const HeaderInformation = styled.div`
   > span {
     background-color: ${(porps) => porps.theme.purpleLight};
     border-radius: 8px;
+    align-items: center;
+    text-align: center;
     justify-content: space-between;
-    padding: 15px 20px 15px 20px;
+    width: 100%;
+    padding: 0.5rem;
+    height: 40px;
+    display: flex;
   }
 
   nav {
@@ -30,8 +32,23 @@ export const HeaderInformation = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    span {
+      font-size: 14px;
+      position: absolute;
+      top: 75px;
+
+      width: 15px;
+      font-weight: bold;
+      height: 15px;
+      border-radius: 50%;
+      background-color: ${(porps) => porps.theme.yellowDark};
+      color: rgb(243, 241, 241);
+      align-items: center;
+      text-align: center;
+    }
+
     > a {
-      background-color: ${(porps) => porps.theme.yellowLight};
+      background-color: ${(porps) => porps.theme.button};
       border-radius: 8px;
       padding: 8px;
       cursor: pointer;

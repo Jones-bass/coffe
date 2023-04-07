@@ -9,6 +9,7 @@ import {
   InputContainer,
   Container,
   ContainerText,
+  ContainerTotalCoffee,
 } from './styles'
 
 import { Input } from '../../components/Input'
@@ -73,7 +74,12 @@ export function Form() {
               control={control}
             />
 
-            <p>Opcional</p>
+            <Input
+              name="opcional"
+              className="opcional"
+              placeholder="opcional"
+              control={control}
+            />
 
             <Input
               name="bairro"
@@ -137,7 +143,9 @@ export function Form() {
           </ContainerPayment>
         </Container>
       </ContainerMain>
-      <TotalCoffeeContainer />
+      <ContainerTotalCoffee>
+        <TotalCoffeeContainer />
+      </ContainerTotalCoffee>
     </ContainerCads>
   )
 }

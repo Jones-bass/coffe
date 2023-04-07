@@ -12,6 +12,13 @@ export const InputContainer = styled.div`
     width: 560px;
     height: 216px;
 
+    @media (max-width: 720px) {
+      row-gap: 0rem;
+      width: 370px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     p {
       font-style: italic;
       font-size: 0.8rem;
@@ -30,12 +37,39 @@ export const InputContainer = styled.div`
     width: 11rem;
   }
 
+  .opcional ::placeholder {
+    font-style: italic;
+    font-size: 0.65rem;
+  }
+
   .rua {
     grid-column: 1 / 4;
   }
 
   .numero {
     grid-column: 1 / 2;
+  }
+
+  @media (max-width: 720px) {
+    .cep {
+      grid-column: 1/4;
+    }
+
+    .rua {
+      grid-column: 1/4;
+    }
+
+    .numero {
+      grid-column: 1/2;
+    }
+
+    .bairro {
+      grid-column: 1/3;
+    }
+
+    .cidade {
+      grid-column: 1/3;
+    }
   }
 `
 
@@ -56,6 +90,10 @@ export const ContainerMain = styled.main`
   margin: 32px 50px 0px 0px;
   border-radius: 8px;
   flex-wrap: wrap;
+
+  @media (max-width: 720px) {
+    width: 420px;
+  }
 
   > p {
     font-family: 'Baloo 2';
@@ -87,6 +125,11 @@ export const ContainerPayment = styled.div`
   p {
     margin-left: 23px;
     font-size: 14px;
+  }
+
+  @media (max-width: 720px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 
@@ -120,5 +163,11 @@ export const ContainerText = styled.div`
     font-size: 0.875rem;
     line-height: 130%;
     color: ${(props) => props.theme.title};
+  }
+`
+
+export const ContainerTotalCoffee = styled.div`
+  @media (max-width: 720px) {
+    margin-top: 12rem;
   }
 `

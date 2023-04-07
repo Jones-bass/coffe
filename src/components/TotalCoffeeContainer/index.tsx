@@ -3,10 +3,10 @@ import { TotalCoffeeCard } from '../TotalCoffeeCard'
 
 import { TotalCoffeeItems } from '../TotalCoffeeItems'
 import { useContext } from 'react'
-import { UseContextCart } from '../../context/useCartContext'
+import { UseContextCard } from '../../context/useCartContext'
 
 export function TotalCoffeeContainer() {
-  const { card, priceFormattedAndSubTotal } = useContext(UseContextCart)
+  const { card, priceFormattedAndSubTotal } = useContext(UseContextCard)
 
   const itemExists = card.length
 
