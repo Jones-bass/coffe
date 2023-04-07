@@ -1,10 +1,18 @@
 import styled from 'styled-components'
 
-export const Cards = styled.div`
+interface PropsType {
+  isVisible: boolean
+}
+
+export const Cards = styled.div<PropsType>`
   width: 256px;
   height: 310px;
   padding: 100px 20px 0px 20px;
   margin: 30px 52px 20px 0px;
+
+  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+  transform: translateY(${({ isVisible }) => (isVisible ? '0' : '20%')});
+  transition: 0.5s ease-out;
 
   text-align: center;
 
@@ -31,6 +39,23 @@ export const Cards = styled.div`
     font-size: 14px;
     color: ${(porps) => porps.theme.text};
   }
+
+  @media (max-width: 720px) {
+    width: 196px;
+    height: 270px;
+
+    margin: 30px 10px 10px 0px;
+
+    > h1 {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    > p {
+      margin-top: 2px;
+      font-size: 12px;
+    }
+  }
 `
 
 export const CardButton = styled.div`
@@ -44,11 +69,23 @@ export const CardButton = styled.div`
     font-size: 24px;
     margin-left: 5px;
   }
+  @media (max-width: 720px) {
+    margin-top: 25px;
+    margin-right: 0rem;
+
+    > p {
+      font-size: 20px;
+    }
+  }
 `
 
 export const ImageCard = styled.div`
   position: relative;
   margin: -120px 0px 0px 0px;
+
+  @media (max-width: 720px) {
+    margin: -130px 0px 0px 0px;
+  }
 `
 
 export const ContainerButton = styled.div`
@@ -81,6 +118,17 @@ export const ContainerButton = styled.div`
   > button:hover {
     background-color: ${(props) => props.theme.yellowLight};
   }
+
+  @media (max-width: 720px) {
+    > span {
+      width: 1rem;
+    }
+
+    > button {
+      width: 25px;
+      height: 37px;
+    }
+  }
 `
 
 export const CardTags = styled.div`
@@ -98,5 +146,12 @@ export const CardTags = styled.div`
     font-size: 0.625rem;
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  @media (max-width: 720px) {
+    span {
+      margin-top: 1rem;
+      padding: 0.5rem 0.5rem;
+    }
   }
 `

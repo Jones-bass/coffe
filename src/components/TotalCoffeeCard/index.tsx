@@ -1,7 +1,13 @@
-import { useAuth } from '../../hooks/useAuth'
-import { BiMinus, BiPlus } from 'react-icons/bi'
+import { BiMinus, BiPlus, BiTrash } from 'react-icons/bi'
 
-import { CardContaneirPayment, ContainerButton, CardPayment } from './styles'
+import {
+  CardContaneirPayment,
+  ButtonCardRemove,
+  ContainerButton,
+  CardPayment,
+} from './styles'
+import { useContext } from 'react'
+import { UseContextCart } from '../../context/useCartContext'
 
 interface CartFormatted {
   id: number
@@ -19,7 +25,11 @@ interface CoffeeSelectedProps {
   item: CartFormatted
 }
 export function TotalCoffeeCard({ item }: CoffeeSelectedProps) {
-  const { updateAmount } = useAuth()
+  const { removeCard, updateAmount } = useContext(UseContextCart)
+
+  function handleRemoveCard(id: number) {
+    removeCard(id)
+  }
 
   function handleIncrement(id: number) {
     updateAmount(id, 'increment')
@@ -46,6 +56,13 @@ export function TotalCoffeeCard({ item }: CoffeeSelectedProps) {
           <button type="button" onClick={() => handleIncrement(item.id)}>
             <BiPlus size={16} />
           </button>
+          <ButtonCardRemove
+            type="button"
+            onClick={() => handleRemoveCard(item.id)}
+          >
+            <BiTrash size={15} color="#8047F8" />
+            REMOVER
+          </ButtonCardRemove>
         </ContainerButton>
       </CardPayment>
       <p>{item.subTotal}</p>

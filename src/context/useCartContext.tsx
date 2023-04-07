@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { Product } from '../@types/product'
 import { priceFormatter } from '../utils/priceFormatter'
 
-export interface IAuthContextProviderProps {
+export interface IUseContextCartProvider {
   children: React.ReactNode
 }
 
@@ -16,21 +16,22 @@ interface CartFormatted extends Card {
   subTotal: string
 }
 
-interface IAuthContextCard {
+interface IUseContextCart {
   addCard: (product: Card) => void
   priceFormattedAndSubTotal: CartFormatted[]
+  removeCard: (id: number) => void
   updateAmount: (id: number, type: 'increment' | 'decrement') => void
 
   card: Card[]
 }
 
-export const AuthContext = createContext<IAuthContextCard>(
-  {} as IAuthContextCard,
+export const UseContextCart = createContext<IUseContextCart>(
+  {} as IUseContextCart,
 )
 
-export const AuthContextProvider = ({
+export const UseCartContextProvider = ({
   children,
-}: IAuthContextProviderProps) => {
+}: IUseContextCartProvider) => {
   const [card, setCard] = useState<Card[]>(() => {
     const storageCard = localStorage.getItem('@CoffeeDelivery')
 
@@ -80,11 +81,29 @@ export const AuthContextProvider = ({
     localStorage.setItem('@Coffee:card', JSON.stringify(cardCopy))
   }
 
+  function removeCard(id: number) {
+    const copyCart = [...card]
+    const productIndex = copyCart.findIndex((cartItem) => cartItem.id === id)
+
+    if (productIndex >= 0) {
+      copyCart.splice(productIndex, 1)
+      setCard(copyCart)
+      localStorage.setItem('@CoffeeDelivery:cart', JSON.stringify(copyCart))
+    } else {
+      throw Error()
+    }
+  }
   return (
-    <AuthContext.Provider
-      value={{ addCard, card, priceFormattedAndSubTotal, updateAmount }}
+    <UseContextCart.Provider
+      value={{
+        removeCard,
+        addCard,
+        card,
+        priceFormattedAndSubTotal,
+        updateAmount,
+      }}
     >
       {children}
-    </AuthContext.Provider>
+    </UseContextCart.Provider>
   )
 }

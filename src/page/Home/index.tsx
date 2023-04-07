@@ -3,15 +3,13 @@ import { useEffect, useState } from 'react'
 import {
   TextHome,
   MenuConatainer,
-  LogoHome,
   HomeContainer,
   ContainerCard,
   ContainerCardMain,
+  Background,
 } from './styles'
 import { FaBox } from 'react-icons/fa'
 import { MdWatchLater, MdShoppingCart, MdCoffee } from 'react-icons/md'
-
-import img from '../../assets/Imagem.png'
 
 import { api } from '../../services/api'
 import { toast } from 'react-toastify'
@@ -84,11 +82,8 @@ export function Home() {
             />
           </MenuConatainer>
         </TextHome>
-        <LogoHome>
-          <img src={img} alt="" />
-        </LogoHome>
+        <Background />
       </HomeContainer>
-
       <ContainerCardMain>
         <p>Complete seu pedido</p>
 

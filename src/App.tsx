@@ -6,11 +6,11 @@ import { GlobalStyle } from './styles/themes/global'
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { AuthContextProvider } from './context/auth'
+import { UseCartContextProvider } from './context/useCartContext'
 
 export function App() {
   return (
-    <AuthContextProvider>
+    <UseCartContextProvider>
       <ThemeProvider theme={defaultTheme}>
         <ToastContainer />
         <BrowserRouter>
@@ -19,6 +19,6 @@ export function App() {
 
         <GlobalStyle />
       </ThemeProvider>
-    </AuthContextProvider>
+    </UseCartContextProvider>
   )
 }

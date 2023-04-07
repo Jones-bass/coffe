@@ -1,28 +1,53 @@
 import styled from 'styled-components'
+import backgroundImage from '../../assets/Imagem.png'
+import introImg from '../../assets/background.png'
 
-export const HomeContainer = styled.main`
+export const Background = styled.div`
+  flex: 1;
+  background: url(${backgroundImage}) no-repeat center;
+  background-size: contain;
+`
+
+export const HomeContainer = styled.section`
+  background: red;
+  background: url(${introImg}) no-repeat center;
+  background-size: cover;
   display: flex;
-  margin: 92px 36px 0px 0px;
+  margin-top: 92px;
 `
-export const LogoHome = styled.div`
-  width: 456px;
-  height: 340px;
-  margin-left: 2rem;
-`
+
 export const TextHome = styled.div`
   font-family: 'Baloo 2';
   font-size: 48px;
   color: ${(porps) => porps.theme.title};
   display: grid;
+
   p {
     font-family: 'Roboto', monospace;
     font-size: 20px;
   }
+
+  @media (max-width: 720px) {
+    font-size: 35px;
+    p {
+      font-size: 18px;
+    }
+  }
 `
 export const MenuConatainer = styled.div`
+  padding: 0.5rem;
+
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  max-width: 900px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  margin-top: 3rem;
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 0.5rem;
+  }
 `
 
 export const ContainerCardMain = styled.div`
@@ -35,8 +60,11 @@ export const ContainerCardMain = styled.div`
     color: ${(porps) => porps.theme.title};
   }
 `
-export const ContainerCard = styled.div`
+export const ContainerCard = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 100%;
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `

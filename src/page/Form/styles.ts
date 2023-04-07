@@ -41,6 +41,12 @@ export const InputContainer = styled.div`
 
 export const ContainerCads = styled.div`
   display: flex;
+
+  @media (max-width: 720px) {
+    gap: 11.4rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 
 export const ContainerMain = styled.main`

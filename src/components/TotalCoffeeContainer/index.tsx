@@ -1,11 +1,12 @@
 import { ContainerCoffe } from './slyles'
 import { TotalCoffeeCard } from '../TotalCoffeeCard'
 
-import { useAuth } from '../../hooks/useAuth'
 import { TotalCoffeeItems } from '../TotalCoffeeItems'
+import { useContext } from 'react'
+import { UseContextCart } from '../../context/useCartContext'
 
 export function TotalCoffeeContainer() {
-  const { card, priceFormattedAndSubTotal } = useAuth()
+  const { card, priceFormattedAndSubTotal } = useContext(UseContextCart)
 
   const itemExists = card.length
 

@@ -4,10 +4,11 @@ import { HeaderContainer, HeaderLogo, HeaderInformation } from './styles'
 import { IoLocationSharp, IoCartSharp } from 'react-icons/io5'
 
 import LogoHeader from '../../assets/Logo.png'
-import { useAuth } from '../../hooks/useAuth'
+import { useContext } from 'react'
+import { UseContextCart } from '../../context/useCartContext'
 
 export function Header() {
-  const { card } = useAuth()
+  const { card } = useContext(UseContextCart)
   const cardLength = card.length
 
   return (

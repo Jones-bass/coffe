@@ -63,18 +63,32 @@ export const CardContaneirPayment = styled.div`
 `
 
 export const CardPayment = styled.div`
-  gap: 0.5rem;
-
   > span {
     font-size: 14px;
     font-family: 'Roboto';
   }
 `
+
+export const ButtonCardRemove = styled.button`
+  padding: 0.563rem;
+  border-radius: 0.375rem;
+  border: 0;
+  font-size: 0.75rem;
+  background: ${(props) => props.theme.button};
+
+  margin-left: 1rem;
+  cursor: pointer;
+
+  gap: 0.25rem;
+
+  transition: 0.3s;
+`
+
 export const ContainerButton = styled.div`
-  grid-column: 2 / 2;
   background: ${(props) => props.theme.button};
 
   width: 4.5rem;
+  height: 2rem;
   padding: 0.563rem;
   border-radius: 0.375rem;
 
@@ -98,7 +112,8 @@ export const ContainerButton = styled.div`
   button {
     cursor: pointer;
     border: 0;
-    background: transparent;
+    background: ${(props) => props.theme.button};
+
     color: ${(props) => props.theme.purple};
 
     display: flex;
