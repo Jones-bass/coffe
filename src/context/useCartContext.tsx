@@ -1,7 +1,8 @@
-import React, { createContext, useState } from 'react'
+import React, { ChangeEvent, createContext, useState } from 'react'
 import { toast } from 'react-toastify'
 import { Product } from '../@types/product'
 import { priceFormatter } from '../utils/priceFormatter'
+import { IAddressType } from '../@types/FormLogin'
 
 export interface IUseContextCardProvider {
   children: React.ReactNode
@@ -17,6 +18,8 @@ interface CartFormatted extends Card {
 }
 
 interface IUseContextCard {
+  address: IAddressType
+  changeAddressByKey: (event: ChangeEvent<HTMLInputElement>) => void
   addCard: (product: Card) => void
   priceFormattedAndSubTotal: CartFormatted[]
   removeCard: (id: number) => void
@@ -32,6 +35,17 @@ export const UseContextCard = createContext<IUseContextCard>(
 export const UseCartContextProvider = ({
   children,
 }: IUseContextCardProvider) => {
+  const [address, setAddress] = useState<IAddressType>({
+    cep: '',
+    rua: '',
+    numero: '',
+    complemento: '',
+    opcional: '',
+    bairro: '',
+    cidade: '',
+    uf: '',
+  })
+
   const [card, setCard] = useState<Card[]>(() => {
     const storageCard = localStorage.getItem('@CoffeeDelivery')
 
@@ -65,6 +79,13 @@ export const UseCartContextProvider = ({
     localStorage.setItem('@CoffeeDelivery', JSON.stringify(copyCard))
   }
 
+  function changeAddressByKey(event: ChangeEvent<HTMLInputElement>) {
+    setAddress((prevAddress) => ({
+      ...prevAddress,
+      [event.target.name]: event.target.value,
+    }))
+  }
+
   function updateAmount(id: number, type: 'increment' | 'decrement') {
     const cardCopy = [...card]
     const productIndex = cardCopy.findIndex((product) => product.id === id)
@@ -96,6 +117,8 @@ export const UseCartContextProvider = ({
   return (
     <UseContextCard.Provider
       value={{
+        address,
+        changeAddressByKey,
         removeCard,
         addCard,
         card,

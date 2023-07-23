@@ -5,7 +5,11 @@ import { TotalCoffeeItems } from '../TotalCoffeeItems'
 import { useContext } from 'react'
 import { UseContextCard } from '../../context/useCartContext'
 
-export function TotalCoffeeContainer() {
+interface TotalCoffeeItemsProps {
+  onSubmit: () => void
+}
+
+export function TotalCoffeeContainer({ onSubmit }: TotalCoffeeItemsProps) {
   const { card, priceFormattedAndSubTotal } = useContext(UseContextCard)
 
   const itemExists = card.length
@@ -24,7 +28,7 @@ export function TotalCoffeeContainer() {
         {priceFormattedAndSubTotal.map((item) => {
           return <TotalCoffeeCard key={item.id} item={item} />
         })}
-        <TotalCoffeeItems />
+        <TotalCoffeeItems onSubmit={onSubmit} />
       </ContainerCoffe>
     </>
   )

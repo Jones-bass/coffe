@@ -1,42 +1,27 @@
 /* eslint-disable no-undef */
-import { Controller, Control } from 'react-hook-form'
-import { IFormLogin } from '../../@types/FormLogin'
-import { InputContainer, InputText } from './styles'
 
-interface InputProps {
-  name:
-    | 'cep'
-    | 'rua'
-    | 'numero'
-    | 'complemento'
-    | 'opcional'
-    | 'bairro'
-    | 'cidade'
-    | 'uf'
+import { useFormContext } from 'react-hook-form'
+import { InputContainer, InputText, ErrosText } from './styles'
+import { InputHTMLAttributes } from 'react'
+import { FiAlertCircle } from 'react-icons/fi'
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string
   className?: string
-  control: Control<IFormLogin, any>
-  placeholder: string
-  type?: string
+  errorMessage: string
 }
 
-export function Input({ control, name, className, ...rest }: InputProps) {
+export function Input({ name, errorMessage, className, ...rest }: InputProps) {
+  const { register } = useFormContext()
+
   return (
-    <>
-      <InputContainer className={className}>
-        <Controller
-          control={control}
-          name={name}
-          render={({ field: { onChange, onBlur, value, ref } }) => (
-            <InputText
-              {...rest}
-              onChange={onChange}
-              onBlur={onBlur}
-              value={value}
-              ref={ref}
-            />
-          )}
-        />
-      </InputContainer>
-    </>
+    <InputContainer className={className}>
+      <InputText {...register(name)} {...rest} />
+      {errorMessage && (
+        <ErrosText title={errorMessage}>
+          <FiAlertCircle size={20} color="#DB2151" />
+        </ErrosText>
+      )}
+    </InputContainer>
   )
 }

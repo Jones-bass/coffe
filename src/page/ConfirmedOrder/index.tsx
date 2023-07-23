@@ -9,8 +9,14 @@ import {
 } from './styles'
 
 import EntregaImg from '../../assets/illustration.png'
+import { useContext } from 'react'
+import { UseContextCard } from '../../context/useCartContext'
 
 export function ConfirmedOrder() {
+  const { address } = useContext(UseContextCard)
+
+  const { bairro, cidade, numero, rua, uf } = address
+
   return (
     <>
       <Title>
@@ -22,8 +28,8 @@ export function ConfirmedOrder() {
           <ContainerForm>
             <FiMapPin size={16} color="#C47F17" />
             <span>
-              Entrega na Rua Raimundo José dos Santos, n 1035
-              <br /> centro - Tobias Barreto-SE
+              Entrega em <strong>{`${rua}, ${numero}`}</strong>
+              <br /> {`${bairro}, ${cidade} ${uf}`}
             </span>
           </ContainerForm>
           <ContainerForm>

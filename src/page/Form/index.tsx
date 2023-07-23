@@ -13,106 +13,126 @@ import {
 } from './styles'
 
 import { Input } from '../../components/Input'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { IFormLogin } from '../../@types/FormLogin'
+import { ChangeEvent, useContext, useState } from 'react'
+import { FormProvider } from 'react-hook-form'
 import { Payment } from '../../components/Payment'
 import { TotalCoffeeContainer } from '../../components/TotalCoffeeContainer'
+import { useNavigate } from 'react-router-dom'
+import { UseContextCard } from '../../context/useCartContext'
+import {
+  CreateUserData,
+  useCreateUserFormValidation,
+} from '../../utils/createUserFormValidation'
 
 export function Form() {
+  const { handleSubmit, errors, createUserForm } = useCreateUserFormValidation()
+
+  const { address, changeAddressByKey } = useContext(UseContextCard)
+
+  const navigate = useNavigate()
+
   const [typePayment, setTypePayment] = useState<
     'creditCard' | 'debitCard' | 'money'
   >('creditCard')
 
-  const { control } = useForm<IFormLogin>()
+  const handleOnSubmit = async (data: CreateUserData) => {
+    try {
+      console.log(data)
+      navigate('/confirmacao')
+    } catch (error) {
+      alert('Ocorreu um erro ao fazer login, cheque as credenciais.')
+    }
+  }
+
+  const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    changeAddressByKey(event)
+  }
 
   return (
     <ContainerCads>
       <ContainerMain>
         <p>Complete seu pedido</p>
         <ContainerForm>
-          <FiMapPin
-            style={{
-              width: '22px',
-              marginBottom: '-0.1rem',
-              marginRight: '0.1rem',
-              color: '#C47F17',
-            }}
-          />
+          <FiMapPin className="icon" />
 
           <span>Endereço de entrega</span>
           <p>Informe o endereço onde deseja receber seu pedido</p>
         </ContainerForm>
 
         <InputContainer>
-          <form>
-            <Input
-              name="cep"
-              className="cep"
-              placeholder="Cep"
-              control={control}
-            />
+          <FormProvider {...createUserForm}>
+            <form>
+              <Input
+                name="cep"
+                className="cep"
+                placeholder="Cep"
+                errorMessage={errors?.cep?.message ?? ''}
+                value={address.cep}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="rua"
-              className="rua"
-              placeholder="Rua"
-              control={control}
-            />
+              <Input
+                name="rua"
+                className="rua"
+                placeholder="Rua"
+                errorMessage={errors?.rua?.message ?? ''}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="numero"
-              className="numero"
-              placeholder="Número"
-              control={control}
-            />
+              <Input
+                name="numero"
+                className="numero"
+                placeholder="Número"
+                errorMessage={errors?.numero?.message ?? ''}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="complemento"
-              className="complemento"
-              placeholder="Complemento"
-              control={control}
-            />
+              <Input
+                name="complemento"
+                className="complemento"
+                placeholder="Complemento"
+                errorMessage={errors?.complemento?.message ?? ''}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="opcional"
-              className="opcional"
-              placeholder="opcional"
-              control={control}
-            />
+              <Input
+                name="opcional"
+                className="opcional"
+                placeholder="opcional"
+                errorMessage={errors?.opcional?.message ?? ''}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="bairro"
-              className="bairro"
-              placeholder="Bairro"
-              control={control}
-            />
+              <Input
+                name="bairro"
+                className="bairro"
+                placeholder="Bairro"
+                errorMessage={errors?.bairro?.message ?? ''}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="cidade"
-              className="cidade"
-              placeholder="Cidade"
-              control={control}
-            />
+              <Input
+                name="cidade"
+                className="cidade"
+                placeholder="Cidade"
+                errorMessage={errors?.cidade?.message ?? ''}
+                onChange={handleChangeInput}
+              />
 
-            <Input
-              name="uf"
-              className="uf"
-              placeholder="Uf"
-              control={control}
-            />
-          </form>
+              <Input
+                name="uf"
+                className="uf"
+                placeholder="Uf"
+                errorMessage={errors?.uf?.message ?? ''}
+                onChange={handleChangeInput}
+              />
+            </form>
+          </FormProvider>
         </InputContainer>
 
         <Container>
           <ContainerText>
-            <BsCurrencyDollar
-              style={{
-                width: '24px',
-                height: '24px',
-                color: '#8047F8',
-              }}
-            />
+            <BsCurrencyDollar className="icon" />
             <h1>Pagamento</h1>
             <p>
               O pagamento é feito na entrega. Escolha a forma que deseja pagar
@@ -144,7 +164,7 @@ export function Form() {
         </Container>
       </ContainerMain>
       <ContainerTotalCoffee>
-        <TotalCoffeeContainer />
+        <TotalCoffeeContainer onSubmit={handleSubmit(handleOnSubmit)} />
       </ContainerTotalCoffee>
     </ContainerCads>
   )

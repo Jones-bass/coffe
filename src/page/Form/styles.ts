@@ -103,10 +103,18 @@ export const ContainerMain = styled.main`
   }
 `
 export const ContainerForm = styled.div`
+  .icon {
+    width: 22px;
+    margin-bottom: -0.1rem;
+    margin-right: 0.1rem;
+    color: #c47f17;
+  }
+
   padding: 40px;
   font-size: 20px;
 
   font-family: 'Roboto';
+
   p {
     margin-left: 23px;
     font-size: 14px;
@@ -143,6 +151,11 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.card};
 `
 export const ContainerText = styled.div`
+  .icon {
+    width: 24px;
+    height: 24px;
+    color: #8047f8;
+  }
   display: grid;
   grid-template-columns: 2rem auto;
   grid-area: auto;

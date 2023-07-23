@@ -1,22 +1,10 @@
-export interface IFormLogin {
+export interface IAddressType {
   cep: string
   rua: string
-  numero: number
-  complemento: string | number
-  opcional: string | number
-
-  bairro: string | number
-  cidade: string | number
+  numero: string
+  complemento: string
+  opcional: string
+  bairro: string
+  cidade: string
   uf: string
-}
-
-export const defaultValues: IFormLogin = {
-  cep: '',
-  rua: '',
-  opcional: '',
-  numero: 0,
-  complemento: '',
-  bairro: '',
-  cidade: '',
-  uf: '',
 }

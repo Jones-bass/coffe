@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Tooltip from '../Tooltip'
 
 export const InputContainer = styled.div`
   background-color: ${(props) => props.theme.input};
@@ -23,5 +24,24 @@ export const InputText = styled.input`
   :focus {
     outline: transparent;
     box-shadow: none;
+  }
+`
+
+export const ErrosText = styled(Tooltip)`
+  height: 20px;
+  margin-right: 2px;
+  cursor: pointer;
+
+  svg {
+    margin: 0px;
+  }
+
+  span {
+    background: #db2151;
+    color: #fff;
+
+    &::before {
+      border-color: #db2151 transparent;
+    }
   }
 `

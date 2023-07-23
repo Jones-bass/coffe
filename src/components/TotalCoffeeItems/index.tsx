@@ -1,6 +1,10 @@
 import { ContainerConfirmList, Price, TotalValue } from './styles'
 
-export function TotalCoffeeItems() {
+interface TotalCoffeeItemsProps {
+  onSubmit: () => void
+}
+
+export function TotalCoffeeItems({ onSubmit }: TotalCoffeeItemsProps) {
   return (
     <ContainerConfirmList>
       <Price>
@@ -15,7 +19,10 @@ export function TotalCoffeeItems() {
         <p>Total</p>
         <p>R$</p>
       </TotalValue>
-      <button type="submit">CONFIRMAR PEDIDO</button>
+
+      <button onClick={onSubmit} type="submit">
+        CONFIRMAR PEDIDO
+      </button>
     </ContainerConfirmList>
   )
 }
