@@ -17,9 +17,6 @@ export const createUserSchema = z.object({
   complemento: z.string().nonempty({
     message: 'Complemento é obrigatório',
   }),
-  opcional: z.string().nonempty({
-    message: 'Opcional é obrigatório',
-  }),
   bairro: z.string().nonempty({
     message: 'Informe o bairro é obrigatório',
   }),

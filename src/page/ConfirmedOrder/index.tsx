@@ -13,7 +13,7 @@ import { useContext } from 'react'
 import { UseContextCard } from '../../context/useCartContext'
 
 export function ConfirmedOrder() {
-  const { address } = useContext(UseContextCard)
+  const { address, typePayment } = useContext(UseContextCard)
 
   const { bairro, cidade, numero, rua, uf } = address
 
@@ -43,7 +43,7 @@ export function ConfirmedOrder() {
             <FiMapPin size={16} color="#C47F17" />
             <span>
               Pagamento na entrega
-              <br /> Cartão de Crédito
+              <br /> {typePayment?.type}
             </span>
           </ContainerForm>
         </ContainerConfirmed>

@@ -17,8 +17,15 @@ interface CartFormatted extends Card {
   subTotal: string
 }
 
+export interface TypePaymentProps {
+  type: 'Cartão de Credito' | 'Cartão de Debito' | 'Dinheiro'
+}
+
+
 interface IUseContextCard {
   address: IAddressType
+  typePayment?: TypePaymentProps | null
+  handlePayment: (paymentType: 'Cartão de Credito' | 'Cartão de Debito' | 'Dinheiro') => void
   changeAddressByKey: (event: ChangeEvent<HTMLInputElement>) => void
   addCard: (product: Card) => void
   priceFormattedAndSubTotal: CartFormatted[]
@@ -45,6 +52,9 @@ export const UseCartContextProvider = ({
     cidade: '',
     uf: '',
   })
+
+  const [typePayment, setTypePayment] = useState<TypePaymentProps | null>(null);
+
 
   const [card, setCard] = useState<Card[]>(() => {
     const storageCard = localStorage.getItem('@CoffeeDelivery')
@@ -86,6 +96,10 @@ export const UseCartContextProvider = ({
     }))
   }
 
+  function handlePayment(paymentType: 'Cartão de Credito' | 'Cartão de Debito' | 'Dinheiro') {
+    setTypePayment({ type: paymentType });
+  }
+
   function updateAmount(id: number, type: 'increment' | 'decrement') {
     const cardCopy = [...card]
     const productIndex = cardCopy.findIndex((product) => product.id === id)
@@ -117,6 +131,8 @@ export const UseCartContextProvider = ({
   return (
     <UseContextCard.Provider
       value={{
+        typePayment,
+        handlePayment,
         address,
         changeAddressByKey,
         removeCard,
