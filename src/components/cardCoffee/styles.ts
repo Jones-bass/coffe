@@ -5,10 +5,10 @@ interface PropsType {
 }
 
 export const Cards = styled.div<PropsType>`
-  width: 256px;
+  width: 92%;
   height: 310px;
-  padding: 100px 20px 0px 20px;
-  margin: 30px 52px 20px 0px;
+  padding: 30% 5% 0 5%;
+  margin: 15% 0 5% 2%;
 
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transform: translateY(${({ isVisible }) => (isVisible ? '0' : '20%')});
@@ -41,19 +41,8 @@ export const Cards = styled.div<PropsType>`
   }
 
   @media (max-width: 720px) {
-    width: 196px;
-    height: 270px;
-
-    margin: 30px 10px 10px 0px;
-
     > h1 {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    > p {
-      margin-top: 2px;
-      font-size: 12px;
+      margin-top: 10%;
     }
   }
 `

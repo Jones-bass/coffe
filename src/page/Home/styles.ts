@@ -13,7 +13,7 @@ export const HomeContainer = styled.section`
   background: url(${introImg}) no-repeat center;
   background-size: cover;
   display: flex;
-  margin-top: 92px;
+  margin-top: 10%;
 `
 
 export const TextHome = styled.div`
@@ -28,7 +28,7 @@ export const TextHome = styled.div`
   }
 
   @media (max-width: 720px) {
-    font-size: 35px;
+    font-size: 30px;
     p {
       font-size: 18px;
     }
@@ -51,7 +51,7 @@ export const MenuConatainer = styled.div`
 `
 
 export const ContainerCardMain = styled.div`
-  margin-top: 5rem;
+  margin-top: 5%;
 
   > p {
     font-family: 'Baloo 2';
@@ -61,10 +61,14 @@ export const ContainerCardMain = styled.div`
   }
 `
 export const ContainerCard = styled.ul`
+  width: 100%;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
   @media (max-width: 720px) {
+    margin-top: 10%;
+    row-gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
   }
 `

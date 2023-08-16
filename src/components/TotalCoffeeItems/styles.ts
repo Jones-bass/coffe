@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerConfirmList = styled.div`
   width: 100%;
   margin: 1.5rem 0;
-
+ 
   button {
     margin-top: 0.75rem;
     width: 100%;

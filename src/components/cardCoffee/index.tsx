@@ -1,18 +1,13 @@
 /* eslint-disable no-undef */
 import { useContext, useEffect, useRef, useState } from 'react'
 
-import {
-  Cards,
-  ImageCard,
-  CardButton,
-  ContainerButton,
-  CardTags,
-} from './styles'
+
 import { IoCartSharp } from 'react-icons/io5'
 import { RiSubtractFill, RiAddFill } from 'react-icons/ri'
 import { ProductFormat } from '../../page/Home'
 import { ButtonCart } from '../ButtonCart'
 import { Card, UseContextCard } from '../../context/useCartContext'
+import { CardButton, CardTags, Cards, ContainerButton, ImageCard } from './styles'
 
 interface ProductsProps {
   product: ProductFormat

@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   align-items: center;
-  display: flex;
-  max-width: 1134px;
   justify-content: space-between;
+
+  display: flex;
+  margin: auto;
+  width: 100%;
 `
 export const HeaderLogo = styled.div``
 

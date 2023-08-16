@@ -16,4 +16,32 @@ export const defaultTheme = {
   yellowLight: '#F1E9C9',
   yellow: '#DBAC2C',
   yellowDark: '#C47F17',
+
+
+  font: {
+    size: {
+      title: {
+        xs: '1.125rem',
+        sm: '1.25rem',
+        md: '1.5rem',
+        lg: '2rem',
+        xl: '3rem',
+      },
+
+      text: {
+        xxs: '.625rem',
+        xs: '.75rem',
+        sm: '.875rem',
+        md: '1rem',
+        lg: '1.125rem',
+        xl: '1.25rem',
+        xxl: '1.5rem',
+      },
+    },
+  },
+
+  layout: {
+    width: 'min(1120px, 100%)',
+    paddingX: '1.5rem',
+  },
 } as const

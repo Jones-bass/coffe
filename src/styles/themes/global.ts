@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   background-color: ${(props) => props.theme.background};
+  width: 98%;
+  margin:auto;
 }
 
 body, input, textarea, button {

@@ -1,9 +1,10 @@
-import { ContainerCoffe } from './slyles'
+import { ContainerCoffe, ContainerCoffeEmpty } from './slyles'
 import { TotalCoffeeCard } from '../TotalCoffeeCard'
 
 import { TotalCoffeeItems } from '../TotalCoffeeItems'
 import { useContext } from 'react'
 import { UseContextCard } from '../../context/useCartContext'
+import List from '../../assets/carrinho.png'
 
 interface TotalCoffeeItemsProps {
   onSubmit: () => void
@@ -16,9 +17,13 @@ export function TotalCoffeeContainer({ onSubmit }: TotalCoffeeItemsProps) {
 
   if (!itemExists) {
     return (
-      <ContainerCoffe>
-        <p>Seu carrinho está vazio</p>
-      </ContainerCoffe>
+
+      <ContainerCoffeEmpty>
+        <img src={List} alt="" />
+        <p>
+          Ops! seu carrinho está vazio 😔 <br />
+        </p>
+      </ContainerCoffeEmpty >
     )
   }
 

@@ -2,9 +2,13 @@ import styled from 'styled-components'
 
 export const ContainerMain = styled.main`
   width: 100%;
-  max-width: 1120px;
-  padding: 80px 0px 0px 0px;
+  padding: 5% 0px 0px 0px;
   display: flex;
+
+  @media (max-width: 720px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 
 export const Title = styled.div`
@@ -22,12 +26,16 @@ export const Title = styled.div`
   }
 `
 export const ContainerConfirmed = styled.section`
-  width: 526px;
-  height: 293px;
-  margin-top: 0px;
+  width: 55%;
+  height: 280px;
 
   border-radius: 6px 36px 6px 36px;
   background: ${(porps) => porps.theme.button};
+
+  @media (max-width: 720px) {
+    margin: 0 auto;
+    width: 95%;
+  }
 `
 
 export const ContainerForm = styled.div`
@@ -41,10 +49,10 @@ export const ContainerForm = styled.div`
 `
 
 export const ImgContainer = styled.div`
-  padding: 0px 0px 0px 40px;
+
 
   img {
-    width: 492px;
-    height: 293px;
+    width: 100%;
+    background-size: cover;
   }
 `

@@ -10,6 +10,15 @@ export const InputContainer = styled.div`
 
   display: flex;
   align-items: center;
+
+  label {
+    font-size: 0.85rem;
+    color: ${(props) => props.theme.label};
+    position: absolute;
+    padding: 0 0.75rem;
+    transition: 0.3s;
+    pointer-events: none;
+  }
 `
 
 export const InputText = styled.input`
@@ -21,11 +30,42 @@ export const InputText = styled.input`
 
   border: none;
 
+
   :focus {
     outline: transparent;
     box-shadow: none;
   }
+
+  :focus-visible,
+  :not([value='']) {
+    + label {
+      font-size: 0.75rem;
+      transform: translate(-1px, calc(-100% - 0.25rem));
+      border-radius: 4px 4px 0 0;
+      border: 1px solid transparent;
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+  }
+
+
+  :focus-visible {
+    + label {
+      background-image: linear-gradient(
+        ${(props) => props.theme.input},
+        ${(props) => props.theme.input}
+        ),
+        linear-gradient(
+          ${(props) => props.theme.input} 60%,
+          transparent 60%
+        );
+    }
+  }
+
+ 
 `
+
+
 
 export const ErrosText = styled(Tooltip)`
   height: 20px;

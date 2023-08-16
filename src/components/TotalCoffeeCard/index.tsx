@@ -24,6 +24,7 @@ interface CartFormatted {
 interface CoffeeSelectedProps {
   item: CartFormatted
 }
+
 export function TotalCoffeeCard({ item }: CoffeeSelectedProps) {
   const { removeCard, updateAmount } = useContext(UseContextCard)
 

@@ -4,7 +4,6 @@ import {
   ContainerForm,
   ContainerCads,
   InputContainer,
-  ContainerTotalCoffee,
 } from './styles'
 
 import { Input } from '../../components/Input'
@@ -55,8 +54,8 @@ export function Form() {
             <form>
               <Input
                 name="cep"
+                label='CEP'
                 className="cep"
-                placeholder="Cep"
                 errorMessage={errors?.cep?.message ?? ''}
                 value={address.cep}
                 onChange={handleChangeInput}
@@ -64,25 +63,28 @@ export function Form() {
 
               <Input
                 name="rua"
+                label='Rua'
                 className="rua"
-                placeholder="Rua"
                 errorMessage={errors?.rua?.message ?? ''}
+                value={address.rua}
                 onChange={handleChangeInput}
               />
 
               <Input
                 name="numero"
+                label='Número'
                 className="numero"
-                placeholder="Número"
                 errorMessage={errors?.numero?.message ?? ''}
+                value={address.numero}
                 onChange={handleChangeInput}
               />
 
               <Input
+                label='Complemento'
                 name="complemento"
                 className="complemento"
-                placeholder="Complemento"
                 errorMessage={errors?.complemento?.message ?? ''}
+                value={address.complemento}
                 onChange={handleChangeInput}
               />
 
@@ -91,26 +93,29 @@ export function Form() {
               </span>
 
               <Input
+                label='Bairro'
                 name="bairro"
                 className="bairro"
-                placeholder="Bairro"
                 errorMessage={errors?.bairro?.message ?? ''}
+                value={address.bairro}
                 onChange={handleChangeInput}
               />
 
               <Input
+                label='Cidade'
                 name="cidade"
                 className="cidade"
-                placeholder="Cidade"
                 errorMessage={errors?.cidade?.message ?? ''}
+                value={address.cidade}
                 onChange={handleChangeInput}
               />
 
               <Input
+                label='Uf'
                 name="uf"
                 className="uf"
-                placeholder="Uf"
                 errorMessage={errors?.uf?.message ?? ''}
+                value={address.uf}
                 onChange={handleChangeInput}
               />
             </form>
@@ -120,9 +125,7 @@ export function Form() {
         <CardPaymentType />
 
       </ContainerMain>
-      <ContainerTotalCoffee>
         <TotalCoffeeContainer onSubmit={handleSubmit(handleOnSubmit)} />
-      </ContainerTotalCoffee>
     </ContainerCads>
   )
 }

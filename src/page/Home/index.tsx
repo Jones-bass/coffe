@@ -15,8 +15,8 @@ import { api } from '../../services/api'
 import { toast } from 'react-toastify'
 import { Loading } from '../../components/Loading'
 import { Product } from '../../@types/product'
-import { CardCoffee } from '../../components/CardCoffee'
 import { IconMenu } from '../../components/IconMenu'
+import { CardCoffee } from '../../components/cardCoffee'
 
 export interface ProductFormat extends Product {
   priceFormattd: string

@@ -1,38 +1,5 @@
 import styled from 'styled-components'
 
-export const ContainerMain = styled.main`
-  margin-left: -10px;
-
-  padding: 32px 0px 0px 0px;
-
-  flex-wrap: wrap;
-
-  > p {
-    margin-left: 20px;
-
-    font-family: 'Baloo 2';
-    font-size: 14px;
-    background-color: ${(porps) => porps.theme.background};
-    color: ${(porps) => porps.theme.subtitle};
-  }
-`
-
-export const ContainerConfirmation = styled.div`
-  background-color: ${(porps) => porps.theme.card};
-  margin-left: 20px;
-  padding: 40px;
-  width: 488px;
-  height: 543px;
-
-  font-size: 20px;
-  border-radius: 6px 44px 6px 44px;
-
-  font-family: 'Roboto';
-  > p {
-    margin-left: 23px;
-    font-size: 14px;
-  }
-`
 export const CardContaneirPayment = styled.div`
   display: grid;
   max-width: 23rem;
